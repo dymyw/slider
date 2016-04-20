@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Slider v2.7</title>
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+        <link type="text/css" rel="stylesheet" href="slider.css" />
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="jquery.slider.js"></script>
+    </head>
+    <body>
+        <div id="slider-box">
+            <div id="slider-items">
+                <ul>
+                    <li class="item"><img src="images/1.jpg" alt="111" />1</li>
+                    <li class="item"><img src="images/2.jpg" alt="222" />2</li>
+                    <li class="item"><img src="images/3.jpg" alt="333" />3</li>
+                    <li class="item"><img src="images/4.jpg" alt="444" />4</li>
+                </ul>
+            </div>
+            <div id="slider-nav">
+                <span class="current">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+            </div>
+        </div>
+        <a class="previous">Previous</a>
+        <a class="next">Next</a>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#slider-items ul").slider({
+                    view: 1.6,
+                    skip: 1,
+                    offset: 0.3,
+					loop: false,
+					circle: true,
+                    auto: 1900,
+                    speed: 900,
+                    effect: 'slide',
+                    touch: true,
+
+                    previous: '.previous',
+                    next: '.next',
+                    nav: '#slider-nav span'
+                });
+            });
+
+            $(window).resize(function() {
+                setTimeout(function() {
+                    $("#slider-items ul").slider('resize');
+                }, 1200);
+            });
+        </script>
+    </body>
+</html>
